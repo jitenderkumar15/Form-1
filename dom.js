@@ -7,3 +7,10 @@ headtext.style.fontWeight='bold';
 
 headtext.style.border='solid 3px #000';
 
+var iteams=document.getElementsByClassName('list-group-item');
+console.log(iteams);
+iteams[2].style.background='green';
+iteams[3].style.fontWeight='bold';
+iteams[2].style.fontWeight='bold';
+iteams[1].style.fontWeight='bold';
+iteams[0].style.fontWeight='bold';
