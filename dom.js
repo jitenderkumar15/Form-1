@@ -14,3 +14,10 @@ iteams[3].style.fontWeight='bold';
 iteams[2].style.fontWeight='bold';
 iteams[1].style.fontWeight='bold';
 iteams[0].style.fontWeight='bold';
+
+
+var iteam5=document.getElementsByClassName('list2');
+iteam5[0].style.background='yellow';
+
+var iteam51=document.getElementsByTagName('li');
+iteam51[4].style.border='3px solid';
