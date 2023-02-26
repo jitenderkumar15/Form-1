@@ -22,14 +22,17 @@
 // var iteam51=document.getElementsByTagName('li');
 // iteam51[4].style.border='3px solid';
 
-var odd = document.querySelectorAll('li');
-odd[1].style.color='green';
+//var odd = document.querySelectorAll('li');
+//odd[1].style.color='green';
 
-var odd = document.querySelectorAll('li:nth-child(odd)');
+//var odd = document.querySelectorAll('li:nth-child(odd)');
 
-for(var i=0;i<odd.length;i++){
+//for(var i=0;i<odd.length;i++){
     odd[i].style.backgroundColor='green';
 }
+
+
+task----7
 
 
 
