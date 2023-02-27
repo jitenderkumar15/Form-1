@@ -1,37 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <title>Item Lister</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css" class="sytle">
+    <title>Document</title>
 </head>
 <body>
-  <header id="main-header" class="bg-success text-white p-4 mb-3">
-    <div class="container">
-      <h1 id="header-title">Item Lister <span style="display:none">123</span></h1>
-    </div>
-  </header>
-  <div class="container">
-   <div id="main " class="card card-body">
-    <h2 id="addtm" class="title">Add Items</h2>
-    <form class="form-inline mb-3">
-      <input type="text" class="form-control mr-2">
-      <input type="submit" class="btn btn-dark" value="Submit">
-    </form>
-    <h2 class="title">Items</h2>
-    <ul id="items" class="list-group">
-      <li class="list-group-item">Item 1</li>
-      <li class="list-group-item">Item 2</li>
-      <li class="list-group-item">Item 3</li>
-      <li class="list-group-item">Item 4</li>
-      <li class="list2">Item 4</li>
-    </ul>
-   </div>
-  </div>
+    <header>
+        <h1>JS For Beginners</h1>
+      </header>
+  
+      <section class="container">
+        <form onsubmit='saveToLocal(event)' id="my-form">
+          <h1>Add User</h1>
+          <div class="msg"></div>
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email">
+          </div>
+          <div>
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone">
+          </div>
+          <input class="btn" type="submit" value="Submit">
+        </form>
+      </section>
 
-  <script src="/dom.js"></script>
+      <script>
+        function saveToLocal(event){
+          event.preventDefault();
 
+          const name1=event.target.name.value;
+          const email1=event.target.email.value;
+          const phone=event.target.phone.value;
+
+          localStorage.setItem("Name",name1);
+          localStorage.setItem("Email ID",email1);
+          localStorage.setItem("Phone Number",phone);
+        }
+      </script>
 </body>
 </html>
