@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css" class="sytle">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>JS For Beginners</h1>
+      </header>
+  
+      <section class="container">
+        <form onsubmit='saveToLocal(event)' id="my-form">
+          <h1>Add User</h1>
+          <div class="msg"></div>
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name">
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email">
+          </div>
+          <div>
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone">
+          </div>
+          <input class="btn" type="submit" value="Submit">
+        </form>
+      </section>
+
+      <script>
+        function saveToLocal(event){
+          event.preventDefault();
+
+          const name1=event.target.name.value;
+          const email1=event.target.email.value;
+          const phone=event.target.phone.value;
+
+          // localStorage.setItem("Name",name1);
+          // localStorage.setItem("Email ID",email1);
+          // localStorage.setItem("Phone Number",phone);
+          
+          let myobj = {
+            name: name1,
+            Email:email1,
+            Phone:phone
+          };
+
+          let myobj_serialized=JSON.stringify(myobj);
+          
+        
+          localStorage.setItem(name1,myobj_serialized);
+          console.log(localStorage);
+        }
+      </script>
+</body>
+</html>
