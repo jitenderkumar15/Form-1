@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/main.css" class="sytle">
+    <!-- <link rel="stylesheet" href="/main.css" class="sytle"> -->
     <title>Document</title>
 </head>
 <body>
@@ -28,8 +28,13 @@
             <label for="phone">Phone Number</label>
             <input type="text" id="phone">
           </div>
-          <input class="btn" type="submit" value="Submit">
+          <input class="btn" type="submit" value="Submit"><br>
+          
         </form>
+
+        <ul id="listItem"> </ul>
+
+        
       </section>
 
       <script>
@@ -54,7 +59,12 @@
           
         
           localStorage.setItem(name1,myobj_serialized);
-          console.log(localStorage);
+
+          const parentElem=document.getElementById('listItem');
+          const childElem=document.createElement('li');
+
+          childElem.textContent=myobj.name + ' | ' + myobj.Email + ' | ' + myobj.Phone;
+          parentElem.appendChild(childElem);
         }
       </script>
 </body>
