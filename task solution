@@ -28,44 +28,44 @@
             <label for="phone">Phone Number</label>
             <input type="text" id="phone">
           </div>
-          <input class="btn" type="submit" value="Submit"><br>
-          
+          <input class='' type="submit" value="Submit"><br>
         </form>
-
-        <ul id="listItem"> </ul>
-
-        
+        <ul id="listItem" >
+        </ul>
       </section>
 
       <script>
         function saveToLocal(event){
           event.preventDefault();
-
           const name1=event.target.name.value;
           const email1=event.target.email.value;
           const phone=event.target.phone.value;
-
-          // localStorage.setItem("Name",name1);
-          // localStorage.setItem("Email ID",email1);
-          // localStorage.setItem("Phone Number",phone);
-          
           let myobj = {
-            name: name1,
-            Email:email1,
-            Phone:phone
+            name1,
+            email1,
+            phone
           };
-
-          let myobj_serialized=JSON.stringify(myobj);
-          
-        
-          localStorage.setItem(name1,myobj_serialized);
-
+          localStorage.setItem(myobj.name1,JSON.stringify(myobj));
+          showUserOnScreen(myobj)
+        }
+        function showUserOnScreen(myobj){
           const parentElem=document.getElementById('listItem');
           const childElem=document.createElement('li');
+          childElem.textContent=myobj.name1 + ' | ' + myobj.email1 + ' | ' + myobj.phone;
 
-          childElem.textContent=myobj.name + ' | ' + myobj.Email + ' | ' + myobj.Phone;
-          parentElem.appendChild(childElem);
+          let deletebtn = document.createElement('intput')
+          deletebtn.type ="button"
+          deletebtn.value= "Delete"
+          deletebtn.textContent=' del '
+          deletebtn.onclick = () => {
+            localStorage.removeItem(myobj.name);
+            parentElem.removeChild(childElem);
+          }
+          
+          childElem.appendChild(deletebtn)
+          parentElem.appendChild(childElem)
         }
+
       </script>
 </body>
 </html>
